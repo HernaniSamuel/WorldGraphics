@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Graphics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>World Graphics</h1>
+        <nav>
+            <ul>
+                <li>
+                    <p><abbr title="Remover país do gráfico"><button id="remove" onclick="modify('del')">x</button></abbr><input type="search" name="search" id="search" placeholder="Nome do país" autocomplete="off"><abbr title="Adicionar país ao gráfico"><button id="add" onclick="modify('add')">+</button></abbr></p>
+                    <ul id="sugestoes">
+                        
+                    </ul>
+                </li>
+                <li>
+                    <p>Indicadores</p>
+                    <ul>
+                        <li><p>Econômicos</p>
+                            <ul>
+                                <li><p onclick="buildIndicator('NY.GDP.MKTP.CD')">PIB</p></li>
+                                <li><p onclick="buildIndicator('NY.GDP.PCAP.CD')">PIB per capita</p></li>
+                                <li><p onclick="buildIndicator('NY.GDP.MKTP.KD.ZG')">Crescimento anual</p></li>
+                                <li><p onclick="buildIndicator('SL.UEM.TOTL.ZS')">Desemprego</p></li>
+                                <li><p onclick="buildIndicator('FP.CPI.TOTL.ZG')">Inflação</p></li>
+                                <li><p onclick="buildIndicator('BX.TRF.PWKR.DT.GD.ZS')">Remessas pessoais</p></li>
+                            </ul>
+                        </li>
+                        <li><p>Sociais</p>
+                            <ul>
+                                <li><p onclick="buildIndicator('SI.POV.DDAY')">Incidência de Pobreza</p></li>
+                                <li><p onclick="buildIndicator('SP.DYN.LE00.IN')">Expectativa de vida ao nascer</p></li>
+                                <li><p onclick="buildIndicator('SP.POP.TOTL')">População</p></li>
+                                <li><p onclick="buildIndicator('SP.POP.GROW')">Crescimento Populacional</p></li>
+                                <li><p onclick="buildIndicator('SM.POP.NETM')">Migração Líquida</p></li>
+                                <li><p onclick="buildIndicator('HD.HCI.OVRL')">Capital Humano</p></li>
+                            </ul>
+                        </li>
+                        <li><p>Ambiente</p>
+                            <ul>
+                                <li><p onclick="buildIndicator('EN.ATM.CO2E.PC')">Emissões de CO2</p></li>
+                                <li><p onclick="buildIndicator('AG.LND.FRST.ZS')">Área Florestal</p></li>
+                                <li><p onclick="buildIndicator('EG.ELC.ACCS.ZS')">Acesso a Eletricidade</p></li>
+                                <li><p onclick="buildIndicator('ER.H2O.FWTL.ZS')">Retiradas anuais de água doce</p></li>
+                                <li><p onclick="buildIndicator('EG.ELC.RNWX.ZS')">Produção de eletricidade a partir de fontes renováveis</p></li>
+                                <li><p onclick="buildIndicator('SH.STA.SMSS.ZS')">Pessoas que usam serviços de saneamento gerenciados com segurança</p></li>
+                            </ul>
+                        </li>
+                        <li><p>Instituições</p>
+                            <ul>
+                                <li><p onclick="buildIndicator('VC.IHR.PSRC.P5')">Homicídios Intencionais</p></li>
+                                <li><p onclick="buildIndicator('GC.DOD.TOTL.GD.ZS')">Dívida do Governo Central</p></li>
+                                <li><p onclick="buildIndicator('IQ.SPI.OVRL')">Indicadores estatísticos de desempenho</p></li>
+                                <li><p onclick="buildIndicator('IT.NET.USER.ZS')">Pessoas que utilizam a internet</p></li>
+                                <li><p onclick="buildIndicator('SG.GEN.PARL.ZS')">Proporção de assentos ocupados por mulheres nos parlamentos nacionais</p></li>
+                                <li><p onclick="buildIndicator('BX.KLT.DINV.WD.GD.ZS')">Investimento estrangeiro direto, entradas líquidas</p></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><p>Contato</p>
+                    <ul>
+                        <li><a href="https://github.com/HernaniSamuel" target="_blank">GitHub</a></li>
+                        <li><a href="https://www.linkedin.com/in/hernanisamueldiniz/" target="_blank">LinkedIn</a></li>
+                        <li><abbr title="hernanisamuel0@gmail.com"><a href="mailto:hernanisamuel0@gmail.com">Email</a></abbr></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <div class="grafico">
+                <iframe src="https://data.worldbank.org/share/widget?indicators=NY.GDP.MKTP.KD.ZG&locations=UZ-BR" width='450' height='300' frameBorder='0' scrolling="no" ></iframe>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+    <script src="paises.js"></script>
+</body>
+</html>
